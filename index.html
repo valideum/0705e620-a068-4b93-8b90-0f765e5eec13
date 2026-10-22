@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ClassicPartScout — Specialized Intelligence for 1960s British Automobilia</title>
+<!-- Google Fonts: Newsreader (Editorial Serif) & JetBrains Mono / Hanken Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=JetBrains+Mono:ital,wght@0,300..800;1,300..800&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#376757",
+            "surface-container-low": "#f5f3ee",
+            "on-primary-fixed-variant": "#1d4f40",
+            "on-background": "#1b1c19",
+            "outline": "#707974",
+            "surface-container": "#f0eee9",
+            "outline-variant": "#c0c9c3",
+            "on-secondary-fixed-variant": "#6c3b00",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#25312d",
+            "tertiary-fixed": "#d8e6e0",
+            "surface-variant": "#e4e2dd",
+            "surface": "#fbf9f4",
+            "primary-fixed-dim": "#9ed1bd",
+            "secondary-fixed": "#ffdcc0",
+            "on-tertiary-fixed": "#121e1a",
+            "on-primary-container": "#8abda9",
+            "inverse-surface": "#30312e",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#ffb877",
+            "primary-container": "#1b4d3e",
+            "surface-container-highest": "#e4e2dd",
+            "on-surface": "#1b1c19",
+            "tertiary-fixed-dim": "#bcc9c4",
+            "surface-bright": "#fbf9f4",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#3d4945",
+            "surface-dim": "#dbdad5",
+            "secondary-container": "#fca550",
+            "on-secondary-fixed": "#2e1600",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#6f3d00",
+            "inverse-primary": "#9ed1bd",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#eae8e3",
+            "on-tertiary-container": "#a8b5af",
+            "primary-fixed": "#baeed9",
+            "on-surface-variant": "#404945",
+            "background": "#fbf9f4",
+            "surface-container-lowest": "#ffffff",
+            "inverse-on-surface": "#f2f1ec",
+            "tertiary-container": "#3b4743",
+            "on-error": "#ffffff",
+            "secondary": "#8d4f00",
+            "error": "#ba1a1a",
+            "primary": "#003629",
+            "on-primary-fixed": "#002117"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-2xl": "3.5rem",
+            "gutter": "1.25rem",
+            "space-2xs": "0.125rem",
+            "space-lg": "1.5rem",
+            "gutter-desktop": "1.75rem",
+            "margin": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "margin-desktop": "3rem",
+            "margin-tablet": "2rem",
+            "space-xl": "2.25rem"
+          },
+          "fontFamily": {
+            "headline-display-mobile": ["Newsreader", "serif"],
+            "headline-md": ["Newsreader", "serif"],
+            "body-sm": ["Hanken Grotesk", "sans-serif"],
+            "label-caps": ["JetBrains Mono", "monospace"],
+            "title-md": ["Hanken Grotesk", "sans-serif"],
+            "headline-lg": ["Newsreader", "serif"],
+            "headline-sm": ["Newsreader", "serif"],
+            "body-md": ["Hanken Grotesk", "sans-serif"],
+            "data-mono-lg": ["JetBrains Mono", "monospace"],
+            "headline-display": ["Newsreader", "serif"],
+            "data-mono-md": ["JetBrains Mono", "monospace"],
+            "body-lg": ["Hanken Grotesk", "sans-serif"],
+            "headline-lg-mobile": ["Newsreader", "serif"]
+          },
+          "fontSize": {
+            "headline-display-mobile": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-caps": ["10px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "data-mono-lg": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+            "data-mono-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 4px;
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #c0c9c3;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md text-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- ========================================================================= -->
+<!-- 1. STICKY NAVIGATION BAR (Strict Shared Component TopNavBar Execution)   -->
+<!-- ========================================================================= -->
+<header class="docked full-width top-0 sticky z-50 bg-surface shadow-sm border-b border-outline-variant">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+<!-- Brand mark & Vintage Automotive Emblem Badge -->
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-2 group" href="#">
+<div class="w-9 h-9 bg-primary-container rounded flex items-center justify-center text-on-primary border border-secondary shadow-sm">
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">speed</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-primary">ClassicPartScout</span>
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Provenance Telemetry</span>
+</div>
+</a>
+<!-- Live Status Pill -->
+<div class="hidden xl:flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container border border-outline-variant text-on-surface-variant font-data-mono-md text-data-mono-md">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
+</span>
+<span class="font-label-caps text-label-caps">Monitoring 48 UK &amp; US Sources Live</span>
+</div>
+</div>
+<!-- Navigation Links from Shared Components JSON + Page Anchors -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant font-title-md text-title-md hover:text-secondary transition-colors duration-150" href="#how-it-works">Methodology</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-title-md text-title-md" href="#market-feed">Arbitrage Matrix</a>
+<a class="text-on-surface-variant font-title-md text-title-md hover:text-secondary transition-colors duration-150" href="#pricing">Memberships</a>
+<a class="text-on-surface-variant font-title-md text-title-md hover:text-secondary transition-colors duration-150" href="#telemetry">Telemetry</a>
+</nav>
+<!-- Trailing CTAs -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center px-3 py-1.5 rounded border border-primary text-primary hover:bg-surface-container font-title-md text-title-md transition-colors duration-150 active:scale-[0.99]" href="#search-anchor">
+          Pro Scout Portal
+        </a>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded bg-secondary text-on-secondary hover:bg-on-secondary-fixed-variant transition-colors duration-150 font-title-md text-title-md shadow-sm active:scale-[0.99]" href="#search-anchor">
+<span class="material-symbols-outlined text-[16px]">travel_explore</span>
+<span>Track a Part</span>
+</a>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- 2. HERO SECTION (2-Column Desktop Split + Interactive Smoke-Test Form)    -->
+<!-- ========================================================================= -->
+<section class="relative overflow-hidden py-12 lg:py-16 bg-surface-container-low border-b border-outline-variant" id="search-anchor">
+<!-- Fine mechanical grid pattern background -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#1b4d3e 1px, transparent 1px); background-size: 24px 24px;"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-gutter-desktop items-start">
+<!-- Left Column: Primary Copy & Intent Capture -->
+<div class="lg:col-span-7 flex flex-col justify-center">
+<!-- Overline Badge -->
+<div class="inline-flex items-center gap-2 mb-3">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed border border-secondary text-on-secondary-fixed font-label-caps text-label-caps tracking-widest uppercase">
+              Specialized Intelligence for 1960s British Automobilia
+            </span>
+<span class="font-data-mono-md text-data-mono-md text-outline">Chassis OEM Cross-Ref</span>
+</div>
+<!-- Main H1 Headline -->
+<h1 class="font-headline-display text-headline-display text-primary tracking-tight mb-4">
+            Stop Searching. Start Restoring. Your 1960s British Car Parts Scout.
+          </h1>
+<!-- Subheadline -->
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-5 max-w-2xl">
+            Never miss a rare part again. We monitor obscure forums, auctions, and social feeds across the UK and US to deliver high-value, verified part leads directly to you.
+          </p>
+<!-- Value Proposition Quote Banner -->
+<div class="border-l-2 border-secondary bg-surface-container p-3 mb-6 rounded-r">
+<p class="font-headline-sm text-headline-sm italic text-tertiary">
+              "The intelligent bridge between fragmented demand and rare 1960s British automotive parts, turning hard-to-find components into profitable opportunities."
+            </p>
+</div>
+<!-- Interactive Smoke-Test Form (Primary Intent Capture) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded shadow-sm p-5 relative">
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">tune</span>
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-wide">Live Dispatch Query Terminal</span>
+</div>
+<span class="font-data-mono-md text-data-mono-md text-secondary">● Latency: 42ms</span>
+</div>
+<form class="space-y-4" id="heroSearchForm">
+<!-- Dropdown 1: Vehicle Make/Model -->
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-1" for="vehicleModel">
+                  1. Target Vehicle Chassis / Model
+                </label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border border-outline-variant rounded px-3 py-2 text-on-surface font-title-md text-title-md focus:border-primary-container focus:ring-1 focus:ring-primary-container" id="vehicleModel">
+<option value="Jaguar E-Type (Series 1 / 2)">Jaguar E-Type (Series 1 / 2)</option>
+<option value="Austin-Healey 3000 Mk III">Austin-Healey 3000 Mk III</option>
+<option value="MG MGB Roadster / GT">MG MGB Roadster / GT</option>
+<option value="Triumph TR4 / TR6">Triumph TR4 / TR6</option>
+<option value="Mini Cooper S (Mk I / II)">Mini Cooper S (Mk I / II)</option>
+</select>
+</div>
+</div>
+<!-- Text Input: Part Name / Part Number -->
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-1" for="partInput">
+                  2. Component Name, OEM Casting, or Stamped Tag
+                </label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded px-3 py-2 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-outline" id="partInput" placeholder="e.g., Lucas 3AW Relay, SU HD8 Carburetor, Salisbury 4HU Differential..." required="" type="text"/>
+</div>
+</div>
+<!-- Location Selector: Pill Radio Selector -->
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-1.5">
+                  3. Geographic Priority Scan
+                </label>
+<div class="grid grid-cols-3 gap-2">
+<label class="cursor-pointer">
+<input checked="" class="sr-only peer" name="geo_zone" type="radio" value="United States"/>
+<div class="text-center py-2 px-1 border border-outline-variant rounded bg-surface peer-checked:bg-primary-container peer-checked:text-on-primary peer-checked:border-primary transition-all font-data-mono-md text-data-mono-md">
+                      United States
+                    </div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="geo_zone" type="radio" value="United Kingdom"/>
+<div class="text-center py-2 px-1 border border-outline-variant rounded bg-surface peer-checked:bg-primary-container peer-checked:text-on-primary peer-checked:border-primary transition-all font-data-mono-md text-data-mono-md">
+                      United Kingdom
+                    </div>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="geo_zone" type="radio" value="Europe"/>
+<div class="text-center py-2 px-1 border border-outline-variant rounded bg-surface peer-checked:bg-primary-container peer-checked:text-on-primary peer-checked:border-primary transition-all font-data-mono-md text-data-mono-md">
+                      Europe
+                    </div>
+</label>
+</div>
+</div>
+<!-- Primary CTA Button -->
+<button class="w-full py-3 px-4 rounded bg-secondary text-on-secondary hover:bg-on-secondary-fixed-variant transition-colors duration-150 font-title-md text-title-md font-semibold tracking-wide flex items-center justify-center gap-2 shadow active:scale-[0.99]" data-event="hero_search_submit" type="submit">
+<span class="material-symbols-outlined text-[20px]">search_insights</span>
+<span>FIND YOUR MISSING PART NOW</span>
+</button>
+</form>
+<!-- Trust Indicators Row -->
+<div class="mt-3 pt-3 border-t border-surface-container flex items-center gap-2 text-outline font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary-container text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Zero scrapers. Direct monitor of active buy-requests across Reddit, niche classifieds, and private owner networks.</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Floating Visual Proof / Live Arbitrage Lead Card -->
+<div class="lg:col-span-5">
+<div class="bg-surface border border-outline-variant rounded shadow-sm overflow-hidden sticky top-24">
+<!-- Terminal Header -->
+<div class="bg-primary-container px-4 py-3 flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Live Arbitrage Match In Paddock</span>
+</div>
+<span class="font-data-mono-md text-data-mono-md text-primary-fixed-dim">Discovered 14 minutes ago</span>
+</div>
+<!-- Card Body -->
+<div class="p-5 space-y-4">
+<!-- Lead Identification -->
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container-high text-primary border border-outline-variant">
+                    CHASSIS: JAG-E-S1-62
+                  </span>
+<span class="font-label-caps text-label-caps text-secondary font-semibold">NOS MATCH</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">
+                  Jaguar E-Type Series 1 3.8L Aluminum Center Console Panel
+                </h3>
+</div>
+<!-- Transatlantic Connector Diagram -->
+<div class="p-3.5 bg-surface-container rounded border border-outline-variant space-y-3">
+<!-- Demand Node (US) -->
+<div class="flex items-start gap-3">
+<div class="mt-0.5 w-6 h-6 rounded bg-surface-container-lowest border border-outline-variant flex items-center justify-center text-primary font-bold text-xs">
+                    US
+                  </div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">Active Demand Node</span>
+<span class="font-data-mono-md text-data-mono-md font-bold text-primary">$1,800 USD</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">Wanted thread on PelicanParts &amp; Reddit (California, USA)</p>
+</div>
+</div>
+<!-- Graphic Flow Arrow -->
+<div class="flex items-center justify-center my-1">
+<div class="h-6 w-[2px] bg-outline-variant relative">
+<span class="material-symbols-outlined text-[14px] text-secondary absolute -left-[6px] top-1">arrow_downward</span>
+</div>
+<span class="ml-4 font-label-caps text-label-caps text-secondary bg-secondary-fixed px-2 py-0.5 rounded border border-secondary">
+                    TRANSATLANTIC LOGISTICS READY
+                  </span>
+</div>
+<!-- Supply Node (UK) -->
+<div class="flex items-start gap-3">
+<div class="mt-0.5 w-6 h-6 rounded bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs">
+                    UK
+                  </div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">Discovered Supply Node</span>
+<span class="font-data-mono-md text-data-mono-md font-bold text-primary">£650 (~$825 USD)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">Private estate forum listing found (Yorkshire, UK)</p>
+</div>
+</div>
+</div>
+<!-- Gross Margin Indicator Badge -->
+<div class="p-3 rounded bg-primary-container text-on-primary flex items-center justify-between border border-secondary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-surface-container">Net Yield Captured</span>
+</div>
+<span class="font-data-mono-lg text-data-mono-lg text-secondary-fixed-dim font-bold">
+                  +$975 Profit Margin Identified
+                </span>
+</div>
+<!-- Verification Footer -->
+<div class="flex items-center justify-between text-body-sm text-body-sm text-on-surface-variant pt-2 border-t border-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-[16px]">verified</span>
+<span class="font-label-caps text-label-caps text-tertiary">Lead Verified • Casting #C18542 Intact</span>
+</div>
+<button class="font-title-md text-title-md text-secondary hover:underline" onclick="openLeadModal('Jaguar E-Type Console', '+$975', 'Yorkshire -&gt; California')" type="button">
+                  Inspect Dossier →
+                </button>
+</div>
+</div>
+<!-- Authentic Automotive Inspection Image -->
+<div class="h-32 border-t border-outline-variant relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover grayscale contrast-125 opacity-80 hover:opacity-100 transition-opacity" data-alt="A macro studio shot of an authentic 1962 Jaguar E-Type brushed aluminum center console plate with period Smiths gauges on a dark walnut restorer worktable. Soft dramatic vintage garage lighting accentuates the mechanical texture and stamped casting numbers in classic British racing green and brass tone palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdbwYuVLHDJzu_kDvHuEKP4BFN4Aij2vunPqXZwtCsLrC1RHgB4UMcH7JZO-_kjBtHSBEz6jwHJi0-AKlBdJ5VuFG01pVCwIZU4WVqmp40d4FPiIoHR4TQAWb4elIPkopZbr6jZ2iUBIvmeA0Bii6f7xASgtjkWTMAHjso5vNKmSm6bH2-DarSLnwqFAbUqsMSMr0Tk8Qj7Ho3MJXg7h1hByux1aFmuU53kqucjWS6AIV4TuSakuCnlAZacGBJ1RHognSdrQQRig"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2.5">
+<span class="font-label-caps text-label-caps text-white bg-black/60 px-2 py-0.5 rounded">
+                  OEM STAMP: LUCAS-ENGLAND-C18542
+                </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 3. PAIN POINT VS. SCOUT SOLUTION MATRIX                                   -->
+<!-- ========================================================================= -->
+<section class="py-16 bg-surface border-b border-outline-variant">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<span class="font-label-caps text-label-caps uppercase text-secondary font-semibold tracking-widest block mb-2">
+          Systemic Market Inefficiencies Solved
+        </span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mb-3">
+          Why Rare 1960s Parts Disappear Into the Void
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Restorations stall for months because classic parts trade on archaic, unindexed platforms. ClassicPartScout turns structural friction into rapid parts location.
+        </p>
+</div>
+<!-- 3-Column Structured Card Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-low border border-outline-variant rounded p-6 flex flex-col justify-between hover:border-primary transition-colors">
+<div>
+<div class="w-10 h-10 rounded bg-surface-container border border-outline-variant flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-[22px]">forum</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">
+              Buried in Dead Forums
+            </h3>
+<div class="space-y-3 mb-6">
+<div class="p-2.5 rounded bg-error-container/30 border border-error/20">
+<span class="font-label-caps text-label-caps text-error uppercase block mb-1">The Friction:</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Niche 1960s components are locked inside archaic phpBB forums and private threads with zero SEO visibility.
+                </p>
+</div>
+<div class="p-2.5 rounded bg-surface-container-high border border-outline-variant">
+<span class="font-label-caps text-label-caps text-primary uppercase block mb-1">Scout Solution:</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+                  Autonomous monitors cross-reference private threads and alert you when hard-to-find components appear.
+                </p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-3 border-t border-surface-variant text-outline font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[16px] text-primary">done_all</span>
+<span>2,400+ Active Forum Crawlers</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low border border-outline-variant rounded p-6 flex flex-col justify-between hover:border-primary transition-colors">
+<div>
+<div class="w-10 h-10 rounded bg-surface-container border border-outline-variant flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">
+              Scam &amp; Authenticity Risks
+            </h3>
+<div class="space-y-3 mb-6">
+<div class="p-2.5 rounded bg-error-container/30 border border-error/20">
+<span class="font-label-caps text-label-caps text-error uppercase block mb-1">The Friction:</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Wiring money to unverified private sellers on mainstream marketplaces often leads to incorrect reproduction parts or fraud.
+                </p>
+</div>
+<div class="p-2.5 rounded bg-surface-container-high border border-outline-variant">
+<span class="font-label-caps text-label-caps text-primary uppercase block mb-1">Scout Solution:</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+                  We cross-check casting numbers, seller history, and OEM authenticity before notifying you.
+                </p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-3 border-t border-surface-variant text-outline font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[16px] text-primary">gavel</span>
+<span>Provenance Casting Verification</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low border border-outline-variant rounded p-6 flex flex-col justify-between hover:border-primary transition-colors">
+<div>
+<div class="w-10 h-10 rounded bg-surface-container border border-outline-variant flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-[22px]">currency_exchange</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">
+              Blind Pricing &amp; High Friction
+            </h3>
+<div class="space-y-3 mb-6">
+<div class="p-2.5 rounded bg-error-container/30 border border-error/20">
+<span class="font-label-caps text-label-caps text-error uppercase block mb-1">The Friction:</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Enthusiasts overpay for reproduction parts while resellers miss massive transatlantic arbitrage spreads.
+                </p>
+</div>
+<div class="p-2.5 rounded bg-surface-container-high border border-outline-variant">
+<span class="font-label-caps text-label-caps text-primary uppercase block mb-1">Scout Solution:</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+                  Transparent price discovery matching UK low-cost supply to high-urgency US restoration demand.
+                </p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-3 border-t border-surface-variant text-outline font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[16px] text-primary">query_stats</span>
+<span>Real-time Transatlantic Spreads</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 4. LIVE DEMAND & SUPPLY TRACKER (Simulated Paddock Telemetry Terminal)    -->
+<!-- ========================================================================= -->
+<section class="py-16 bg-surface-container-low border-b border-outline-variant" id="market-feed">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="h-2 w-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps uppercase text-secondary font-semibold tracking-wider">
+              Coventry &amp; Indianapolis Exchange Terminal
+            </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">
+            Live Arbitrage Matrix &amp; Part Match Engine
+          </h2>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-data-mono-md text-data-mono-md text-outline">Feed status: STREAMING</span>
+<span class="px-2 py-1 rounded bg-primary-container text-on-primary font-label-caps text-label-caps">
+            REFRESH: 12 SEC
+          </span>
+</div>
+</div>
+<!-- Telemetry Data Grid Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded shadow-sm overflow-hidden">
+<!-- Table Header -->
+<div class="bg-primary-container text-on-primary px-4 py-3 grid grid-cols-12 gap-4 font-label-caps text-label-caps uppercase tracking-wider items-center border-b border-outline">
+<div class="col-span-3">Vehicle Spec</div>
+<div class="col-span-3">Target OEM Part</div>
+<div class="col-span-4">Matched Arbitrage Vector</div>
+<div class="col-span-2 text-right">Spread / Action</div>
+</div>
+<!-- Terminal Rows -->
+<div class="divide-y divide-surface-variant">
+<!-- Row 1 -->
+<div class="px-4 py-3.5 grid grid-cols-12 gap-4 items-center hover:bg-surface-container transition-colors">
+<div class="col-span-3">
+<span class="font-title-md text-title-md text-primary font-semibold block">Austin-Healey 3000 Mk III</span>
+<span class="font-data-mono-md text-data-mono-md text-outline">BJ8 Chassis (1965)</span>
+</div>
+<div class="col-span-3">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">speed</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Original Smiths 140mph Speedometer</span>
+</div>
+<span class="font-label-caps text-label-caps text-outline">Ref: SN-6144/00</span>
+</div>
+<div class="col-span-4">
+<div class="font-body-sm text-body-sm text-on-surface">
+<span class="font-semibold text-primary">Buyer:</span> Chicago, IL ⇄ <span class="font-semibold text-primary">Supply:</span> Coventry private collection
+              </div>
+<span class="font-data-mono-md text-data-mono-md text-secondary">Est. Shipping Transit: 4 Days</span>
+</div>
+<div class="col-span-2 text-right">
+<div class="font-data-mono-lg text-data-mono-lg font-bold text-primary">+$420</div>
+<button class="font-title-md text-title-md text-secondary hover:text-on-secondary-fixed-variant hover:underline" data-event="arbitrage_card_click" onclick="openLeadModal('Austin-Healey Smiths Speedo', '+$420', 'Coventry -&gt; Chicago')">
+                [View Match Details →]
+              </button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="px-4 py-3.5 grid grid-cols-12 gap-4 items-center bg-surface hover:bg-surface-container transition-colors">
+<div class="col-span-3">
+<span class="font-title-md text-title-md text-primary font-semibold block">Triumph TR6</span>
+<span class="font-data-mono-md text-data-mono-md text-outline">Commission CC50000+</span>
+</div>
+<div class="col-span-3">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">dashboard</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Surrey Top Aluminum Frame</span>
+</div>
+<span class="font-label-caps text-label-caps text-outline">OEM Factory Option</span>
+</div>
+<div class="col-span-4">
+<div class="font-body-sm text-body-sm text-on-surface">
+<span class="font-semibold text-primary">Buyer:</span> Austin, TX ⇄ <span class="font-semibold text-primary">Supply:</span> Surrey Top forum auction in Midlands
+              </div>
+<span class="font-data-mono-md text-data-mono-md text-secondary">Unrestored Original Paint</span>
+</div>
+<div class="col-span-2 text-right">
+<div class="font-data-mono-lg text-data-mono-lg font-bold text-primary">+$680</div>
+<button class="font-title-md text-title-md text-secondary hover:text-on-secondary-fixed-variant hover:underline" data-event="arbitrage_card_click" onclick="openLeadModal('Triumph TR6 Surrey Top', '+$680', 'Midlands -&gt; Austin')">
+                [View Match Details →]
+              </button>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="px-4 py-3.5 grid grid-cols-12 gap-4 items-center hover:bg-surface-container transition-colors">
+<div class="col-span-3">
+<span class="font-title-md text-title-md text-primary font-semibold block">Jaguar E-Type 4.2</span>
+<span class="font-data-mono-md text-data-mono-md text-outline">Series 1 Fixed Head Coupe</span>
+</div>
+<div class="col-span-3">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">settings</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Triple SU HD8 Carburetors (Matched Set)</span>
+</div>
+<span class="font-label-caps text-label-caps text-outline">AUC 9444 Intake Manifold</span>
+</div>
+<div class="col-span-4">
+<div class="font-body-sm text-body-sm text-on-surface">
+<span class="font-semibold text-primary">Buyer:</span> Seattle, WA ⇄ <span class="font-semibold text-primary">Supply:</span> Barn find listing in Gloucestershire
+              </div>
+<span class="font-data-mono-md text-data-mono-md text-secondary">Matching Numbers Verified</span>
+</div>
+<div class="col-span-2 text-right">
+<div class="font-data-mono-lg text-data-mono-lg font-bold text-primary">+$1,250</div>
+<button class="font-title-md text-title-md text-secondary hover:text-on-secondary-fixed-variant hover:underline" data-event="arbitrage_card_click" onclick="openLeadModal('Jaguar SU HD8 Carburetors', '+$1,250', 'Gloucestershire -&gt; Seattle')">
+                [View Match Details →]
+              </button>
+</div>
+</div>
+</div>
+<!-- Terminal Status Bar -->
+<div class="bg-surface-container px-4 py-3 border-t border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-2 text-outline font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Real-time arbitrage telemetry refreshed across 18 regional UK parts boards</span>
+</div>
+<a class="px-4 py-1.5 rounded border border-primary text-primary hover:bg-surface-container-high transition-colors font-title-md text-title-md" href="#search-anchor">
+            Set Up Alert for My Vehicle
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 5. STEP-BY-STEP MECHANISM ("How It Works")                                 -->
+<!-- ========================================================================= -->
+<section class="py-16 bg-surface border-b border-outline-variant" id="how-it-works">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="font-label-caps text-label-caps uppercase text-secondary font-semibold tracking-widest block mb-2">
+          Engineered Discovery Process
+        </span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mb-3">
+          How ClassicPartScout Works
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          From unindexed forum threads to your garage workbench in three calibrated stages.
+        </p>
+</div>
+<!-- 3-step horizontal workflow -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+<!-- Step 01 -->
+<div class="relative bg-surface-container-low border border-outline-variant rounded p-6">
+<div class="flex items-center justify-between mb-4">
+<span class="font-data-mono-lg text-data-mono-lg font-bold text-secondary">01</span>
+<span class="material-symbols-outlined text-primary text-[24px]">hearing</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">
+            Social Listening for Active Intent
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            We monitor keywords like "Looking for...", "Still hunting for...", across specialized subreddits, Facebook groups, and enthusiast boards.
+          </p>
+<div class="mt-4 pt-3 border-t border-surface-variant">
+<span class="font-label-caps text-label-caps text-outline uppercase">Targeting: Reddit, PistonHeads, MG-Exp</span>
+</div>
+</div>
+<!-- Step 02 -->
+<div class="relative bg-surface-container-low border border-outline-variant rounded p-6">
+<div class="flex items-center justify-between mb-4">
+<span class="font-data-mono-lg text-data-mono-lg font-bold text-secondary">02</span>
+<span class="material-symbols-outlined text-primary text-[24px]">travel_explore</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">
+            Localized Sourcing &amp; Obscure Auctions
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Our engine scans private garage clearance boards, regional UK estate sales, and offline car club classifieds unavailable on eBay.
+          </p>
+<div class="mt-4 pt-3 border-t border-surface-variant">
+<span class="font-label-caps text-label-caps text-outline uppercase">Coverage: Midlands &amp; Home Counties</span>
+</div>
+</div>
+<!-- Step 03 -->
+<div class="relative bg-surface-container-low border border-outline-variant rounded p-6">
+<div class="flex items-center justify-between mb-4">
+<span class="font-data-mono-lg text-data-mono-lg font-bold text-secondary">03</span>
+<span class="material-symbols-outlined text-primary text-[24px]">notifications_active</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">
+            Verified Deal Notification
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            You receive an immediate ping with the direct purchase link, seller credibility score, and calculated profit margin or savings.
+          </p>
+<div class="mt-4 pt-3 border-t border-surface-variant">
+<span class="font-label-caps text-label-caps text-outline uppercase">Delivery: SMS, Email &amp; Dossier Link</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 6. MONETIZATION VALIDATION / INTENT-TO-BUY SECTION (2-Tier Comparison)    -->
+<!-- ========================================================================= -->
+<section class="py-16 bg-surface-container-low border-b border-outline-variant" id="pricing">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="font-label-caps text-label-caps uppercase text-secondary font-semibold tracking-widest block mb-2">
+          Calibrated Access Tiers
+        </span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mb-3">
+          Memberships Built for Restorers &amp; Resellers
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Whether completing a single dream chassis or brokering container shipments across the Atlantic.
+        </p>
+</div>
+<!-- 2-Tier Pricing Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+<!-- Card A: Restorer (Single Search) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-8 flex flex-col justify-between">
+<div>
+<div class="mb-4">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container text-on-surface-variant uppercase border border-outline-variant">
+                Single Project Builder
+              </span>
+<h3 class="font-headline-md text-headline-md text-primary mt-2">Restorer</h3>
+<p class="font-body-sm text-body-sm text-outline mt-1">For bespoke owners hunting the final missing component.</p>
+</div>
+<div class="my-6 pb-6 border-b border-surface-variant">
+<div class="font-headline-display text-headline-display text-primary">Free</div>
+<span class="font-label-caps text-label-caps text-outline">DURING BETA ACCESS PERIOD</span>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>1 Active Part Monitor</span>
+</li>
+<li class="flex items-center gap-2 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>24h Notification Delay</span>
+</li>
+<li class="flex items-center gap-2 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>US &amp; UK Public Forum Coverage</span>
+</li>
+<li class="flex items-center gap-2 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>Community Verification Notes</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-3 rounded border border-primary text-primary hover:bg-surface-container font-title-md text-title-md font-semibold transition-colors" data-event="free_waitlist_signup" onclick="triggerWaitlistAction('Restorer')">
+            Join Free Restorer Waitlist
+          </button>
+</div>
+<!-- Card B: Pro Scout & Reseller (Arbitrage Feed) -->
+<div class="bg-surface-container-lowest border-2 border-secondary rounded p-8 flex flex-col justify-between relative shadow-sm">
+<!-- Top Badge -->
+<div class="absolute -top-3.5 right-6">
+<span class="px-3 py-1 rounded bg-secondary text-on-secondary font-label-caps text-label-caps uppercase tracking-wider shadow">
+              Most Popular for Parts Dealers
+            </span>
+</div>
+<div>
+<div class="mb-4">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed uppercase border border-secondary">
+                High-Frequency Arbitrage
+              </span>
+<h3 class="font-headline-md text-headline-md text-primary mt-2">Pro Scout &amp; Reseller</h3>
+<p class="font-body-sm text-body-sm text-outline mt-1">For commercial parts specialists and workshop restorers.</p>
+</div>
+<div class="my-6 pb-6 border-b border-surface-variant flex items-baseline gap-2">
+<div class="font-headline-display text-headline-display text-primary">10%</div>
+<span class="font-body-md text-body-md text-on-surface-variant">Success Fee</span>
+<span class="text-outline font-data-mono-md text-data-mono-md">or $49/mo Priority</span>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span class="font-medium">Unlimited Active Monitors</span>
+</li>
+<li class="flex items-center gap-2 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span>Instant SMS Alerts on High-Margin Spreads</span>
+</li>
+<li class="flex items-center gap-2 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span>Direct Access to Seller Contact Info &amp; Classified Thread</span>
+</li>
+<li class="flex items-center gap-2 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span>Authenticity &amp; Casting Number Verification Report</span>
+</li>
+<li class="flex items-center gap-2 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span>Direct Transatlantic Logistics &amp; Export Guidance</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-3 rounded bg-secondary text-on-secondary hover:bg-on-secondary-fixed-variant font-title-md text-title-md font-semibold transition-colors shadow" data-event="pro_tier_intent" onclick="triggerWaitlistAction('Pro Scout')">
+            Reserve Pro Scout Access
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 7. FINAL CONVERSION CALL-TO-ACTION (British Racing Green Banner)           -->
+<!-- ========================================================================= -->
+<section class="py-16 bg-primary-container text-on-primary relative overflow-hidden border-b border-outline">
+<!-- Subtle technical grid -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#ffdcc0 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-primary text-secondary-fixed mb-4 border border-secondary">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Zero Scraping Noise • Direct High-Value Leads</span>
+</div>
+<h2 class="font-headline-display text-headline-display text-surface tracking-tight mb-4">
+        Don't Let a Missing Bolt Stall a 3-Year Restoration.
+      </h2>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim max-w-2xl mx-auto mb-8">
+        Join 200+ 1960s British car collectors and niche parts scouts receiving real-time sourcing alerts.
+      </p>
+<!-- Lead Capture Form -->
+<form class="bg-surface p-4 sm:p-6 rounded border border-secondary max-w-2xl mx-auto text-left shadow-lg" id="finalCtaForm">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-1" for="ctaEmail">
+              Collector Email Address
+            </label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded px-3 py-2 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary" id="ctaEmail" placeholder="restorer@silverstone.co.uk" required="" type="email"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-1" for="ctaProject">
+              Current Project Vehicle
+            </label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded px-3 py-2 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary" id="ctaProject" placeholder="e.g., 1964 Sunbeam Tiger Mk1" required="" type="text"/>
+</div>
+</div>
+<button class="w-full py-3 rounded bg-secondary text-on-secondary hover:bg-on-secondary-fixed-variant transition-colors font-title-md text-title-md font-semibold flex items-center justify-center gap-2 shadow" type="submit">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Get Priority Alerts</span>
+</button>
+<p class="font-body-sm text-body-sm text-outline text-center mt-3">
+          No spam. We only contact you when your specific part is located.
+        </p>
+</form>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 8. FOOTER (Strict Shared Component Execution)                             -->
+<!-- ========================================================================= -->
+<footer class="docked full-width bottom bg-primary text-on-primary border-t border-primary-container">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<!-- Brand & Copyright -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left gap-2">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-primary">ClassicPartScout</span>
+</div>
+<p class="text-on-primary-container font-body-sm text-body-sm max-w-md">
+          © 1961–2025 ClassicPartScout Intelligence Group Ltd. All provenance telemetry verified against OEM parts books.
+        </p>
+<p class="text-[11px] text-outline max-w-md">
+          ClassicPartScout is an independent search tool and is not affiliated with Jaguar Land Rover, British Motor Heritage, or eBay Motors.
+        </p>
+</div>
+<!-- Links from Shared Components JSON + Additional Provenance Links -->
+<div class="flex flex-wrap justify-center gap-y-2 gap-x-6 text-center">
+<a class="text-on-primary-container font-body-sm text-body-sm hover:text-secondary-fixed transition-colors duration-150" href="#market-feed">Coventry Paddock Feed</a>
+<a class="text-on-primary-container font-body-sm text-body-sm hover:text-secondary-fixed transition-colors duration-150" href="#telemetry">Chassis Registry</a>
+<a class="text-on-primary-container font-body-sm text-body-sm hover:text-secondary-fixed transition-colors duration-150" href="#market-feed">Arbitrage Yield Engine</a>
+<a class="text-on-primary-container font-body-sm text-body-sm hover:text-secondary-fixed transition-colors duration-150" href="#" onclick="alert('Terms of Provenance: All telemetry points cross-checked with British Heritage Industry certified logs.')">Terms of Provenance</a>
+<a class="text-on-primary-container font-body-sm text-body-sm hover:text-secondary-fixed transition-colors duration-150" href="#" onclick="alert('Restorer Privacy: We never sell workshop VIN telemetry to external advertisers.')">Restorer Privacy</a>
+</div>
+</div>
+</footer>
+<!-- ========================================================================= -->
+<!-- INTERACTIVE CLIENT-SIDE JAVASCRIPT & MODAL OVERLAY                        -->
+<!-- ========================================================================= -->
+<!-- Interactive Match Details Dossier Modal -->
+<div class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4" id="leadModal">
+<div class="bg-surface max-w-lg w-full rounded border-2 border-secondary shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<div class="bg-primary-container px-4 py-3 text-on-primary flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px]">verified</span>
+<span class="font-label-caps text-label-caps uppercase" id="modalChassisTag">Verified Match Dossier</span>
+</div>
+<button class="text-primary-fixed-dim hover:text-white" onclick="closeLeadModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-6 space-y-4">
+<div>
+<span class="font-label-caps text-label-caps text-secondary uppercase">Active Paddock Node</span>
+<h4 class="font-headline-sm text-headline-sm text-primary" id="modalPartTitle">Part Title</h4>
+<p class="font-body-sm text-body-sm text-outline" id="modalVector">Coventry -&gt; Chicago</p>
+</div>
+<div class="p-4 bg-surface-container rounded border border-outline-variant space-y-2 font-data-mono-md text-data-mono-md">
+<div class="flex justify-between">
+<span class="text-outline">Casting Code:</span>
+<span class="text-on-surface font-bold">LUC-7821-B</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Estimated Gross Spread:</span>
+<span class="text-primary font-bold" id="modalSpread">+$420</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Seller Credibility:</span>
+<span class="text-primary font-bold">99.4% (Austin-Healey Club UK)</span>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full py-2.5 rounded bg-secondary text-on-secondary hover:bg-on-secondary-fixed-variant font-title-md text-title-md font-semibold transition-colors" onclick="confirmLeadRequest()">
+            Request Direct Seller Intro ($0 Beta)
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toastNotification">
+<div class="bg-primary text-on-primary px-4 py-3 rounded border border-secondary shadow-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">check_circle</span>
+<div>
+<p class="font-title-md text-title-md text-surface" id="toastTitle">Part Request Logged!</p>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim" id="toastDesc">We have initialized telemetry monitoring across 48 feeds.</p>
+</div>
+</div>
+</div>
+<script>
+    // Hero Search Form Interaction
+    const heroForm = document.getElementById('heroSearchForm');
+    heroForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const model = document.getElementById('vehicleModel').value;
+      const part = document.getElementById('partInput').value;
+      showToast('Telemetry Request Active!', `Searching UK & US classifieds for "${part}" (${model}).`);
+      heroForm.reset();
+    });
+
+    // Final CTA Form Interaction
+    const ctaForm = document.getElementById('finalCtaForm');
+    ctaForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('ctaEmail').value;
+      showToast('Registration Confirmed', `Priority alerts armed for ${email}. Check inbox for intake verification.`);
+      ctaForm.reset();
+    });
+
+    // Waitlist Action Trigger
+    function triggerWaitlistAction(tier) {
+      showToast(`${tier} Tier Selected`, 'Your spot has been reserved on the provenance priority access queue.');
+    }
+
+    // Modal Helpers
+    function openLeadModal(title, spread, vector) {
+      document.getElementById('modalPartTitle').innerText = title;
+      document.getElementById('modalSpread').innerText = spread;
+      document.getElementById('modalVector').innerText = vector;
+      document.getElementById('leadModal').classList.remove('hidden');
+    }
+
+    function closeLeadModal() {
+      document.getElementById('leadModal').classList.add('hidden');
+    }
+
+    function confirmLeadRequest() {
+      closeLeadModal();
+      showToast('Dossier Link Dispatched', 'Seller contact details and casting confirmation sent to your scout session.');
+    }
+
+    // Toast Utility
+    function showToast(title, desc) {
+      const toast = document.getElementById('toastNotification');
+      document.getElementById('toastTitle').innerText = title;
+      document.getElementById('toastDesc').innerText = desc;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 4200);
+    }
+  </script>
+</body></html>
